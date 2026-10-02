@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Build cache
+*.tsbuildinfo
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Local credential blob (Windows DPAPI) - never commit
+*.dpapi.xml
+**/*.dpapi.xml

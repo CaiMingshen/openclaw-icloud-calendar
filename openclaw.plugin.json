@@ -1,0 +1,97 @@
+{
+  "id": "icloud-calendar",
+  "name": "iCloud Calendar",
+  "description": "Read and write Apple iCloud Calendar over CalDAV: list calendars, read events with recurrence expansion, create events, and confirm-gated deletes.",
+  "categories": [
+    "scheduling"
+  ],
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "account": {
+        "type": "string",
+        "default": ""
+      },
+      "secretEnv": {
+        "type": "string",
+        "default": "ICLOUD_APP_PASSWORD"
+      },
+      "secretSource": {
+        "type": "string",
+        "default": "auto"
+      },
+      "serverUrl": {
+        "type": "string",
+        "default": "https://caldav.icloud.com/"
+      },
+      "timeoutMs": {
+        "type": "integer",
+        "default": 30000
+      },
+      "retries": {
+        "type": "integer",
+        "default": 2
+      },
+      "proxyUrl": {
+        "type": "string",
+        "default": ""
+      },
+      "defaultCalendars": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": []
+      },
+      "cacheTtlMs": {
+        "type": "integer",
+        "default": 300000
+      },
+      "allowWrites": {
+        "type": "boolean",
+        "default": true
+      },
+      "allowDeletes": {
+        "type": "boolean",
+        "default": false
+      },
+      "maxDeletesPerCall": {
+        "type": "integer",
+        "default": 1
+      },
+      "maxWindowDays": {
+        "type": "integer",
+        "default": 366
+      },
+      "maxDeleteWindowDays": {
+        "type": "integer",
+        "default": 90
+      },
+      "storeKind": {
+        "type": "string",
+        "default": "auto"
+      },
+      "storeDirectory": {
+        "type": "string",
+        "default": ""
+      },
+      "maxOccurrencesPerSeries": {
+        "type": "integer",
+        "default": 400
+      }
+    }
+  },
+  "version": "0.1.0",
+  "contracts": {
+    "tools": [
+      "calendar_status",
+      "calendar_list_calendars",
+      "calendar_list_events",
+      "calendar_create_event",
+      "calendar_delete_events"
+    ]
+  }
+}

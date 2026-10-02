@@ -1,0 +1,2 @@
+# Windows DPAPI blob for the app-specific password
+*.dpapi.xml
